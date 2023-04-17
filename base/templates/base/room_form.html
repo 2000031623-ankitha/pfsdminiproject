@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}   <!--this token will be sent with every user request to make sure that there is no malicious activity is going on -->
+        {{form.as_p}}  <!--Here {{ form.as_p }} will render them wrapped in <p> tags. Let’s check whether this is working accordingly or not. -->
+        <input type="Submit" value="Submit"/>
+    </form>
+</div>
+{% endblock content%}
